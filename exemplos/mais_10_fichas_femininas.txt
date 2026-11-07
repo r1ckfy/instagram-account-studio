@@ -1,0 +1,89 @@
+Nome: Luna Azevedo
+Usuario: lunaazv
+Nascimento: 22/01/2004
+Estado: Alagoas
+Cidade: Maceió
+Bio: |
+  22y | alagoana 🌴
+  entre o mar e os meus sonhos ✨
+---
+Nome: Melina Duarte
+Usuario: melidrt
+Nascimento: 09/02/2004
+Estado: Pernambuco
+Cidade: Recife
+Bio: |
+  22y | pernambucana ☀️
+  colecionando sorrisos e dias leves 🤍
+---
+Nome: Aurora Nogueira
+Usuario: aurangr
+Nascimento: 17/03/2004
+Estado: Bahia
+Cidade: Salvador
+Bio: |
+  22y | baiana 🌊
+  deixando a vida ganhar novas cores ✨
+---
+Nome: Nina Vasconcelos
+Usuario: ninavsc
+Nascimento: 05/04/2004
+Estado: Ceará
+Cidade: Fortaleza
+Bio: |
+  22y | cearense 🌴
+  sol, boas energias e um café depois ☕
+---
+Nome: Elisa Brandão
+Usuario: elisabrd
+Nascimento: 28/05/2004
+Estado: Paraíba
+Cidade: João Pessoa
+Bio: |
+  22y | paraibana 🦋
+  meu jeitinho de enxergar o mundo 📸
+---
+Nome: Lívia Amaral
+Usuario: liviamrl
+Nascimento: 11/06/2004
+Estado: Rio Grande do Norte
+Cidade: Natal
+Bio: |
+  22y | potiguar ☀️
+  onde tem mar, eu quero estar 🌊
+---
+Nome: Malu Peixoto
+Usuario: malupxt
+Nascimento: 24/07/2004
+Estado: Sergipe
+Cidade: Aracaju
+Bio: |
+  22y | sergipana 🌷
+  encontrando beleza nos pequenos detalhes ✨
+---
+Nome: Jade Figueiredo
+Usuario: jadefgr
+Nascimento: 03/08/2004
+Estado: São Paulo
+Cidade: Campinas
+Bio: |
+  22y | paulista 🏙️
+  café na mão e mil planos na cabeça ☕
+---
+Nome: Olívia Tavares
+Usuario: oliviatvr
+Nascimento: 16/09/2004
+Estado: Minas Gerais
+Cidade: Belo Horizonte
+Bio: |
+  22y | mineira 🤎
+  histórias, abraços e um horizonte bonito ✨
+---
+Nome: Alana Siqueira
+Usuario: alanasqr
+Nascimento: 07/10/2004
+Estado: Santa Catarina
+Cidade: Florianópolis
+Bio: |
+  22y | catarinense 🏖️
+  vivendo sem pressa, sonhando sem limite 🦋

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadastro DEMO — Instagram Account Studio</title>
+<style>
+  :root { --bg:#090D11; --panel:#10152A; --comp:#171D35; --cyan:#00D9F5; --green:#00E69A; --red:#FF4268; --yellow:#FFC247; --text:#E8ECF5; --muted:#8A93B2; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; background:var(--bg); color:var(--text); font:15px "Segoe UI", system-ui, sans-serif; }
+  .card { width:min(380px, calc(100vw - 32px)); background:var(--panel); border:1px solid #232B4A; border-radius:14px; padding:28px; }
+  .badge { display:inline-block; font-size:11px; letter-spacing:1px; color:var(--yellow); border:1px solid var(--yellow); border-radius:20px; padding:3px 10px; margin-bottom:12px; }
+  h1 { margin:0 0 4px; font-size:22px; color:var(--cyan); }
+  p { color:var(--muted); margin:0 0 18px; font-size:13px; }
+  label { display:block; font-size:12px; color:var(--muted); margin:10px 0 4px; }
+  input, select { width:100%; padding:10px; border-radius:8px; border:1px solid #262F55; background:var(--comp); color:var(--text); font:inherit; }
+  input:focus, select:focus { outline:none; border-color:var(--cyan); }
+  .row { display:flex; gap:8px; } .row > * { flex:1; }
+  button { width:100%; margin-top:18px; padding:11px; border:0; border-radius:8px; background:var(--cyan); color:#04121A; font-weight:700; cursor:pointer; }
+  button.secondary { background:transparent; border:1px solid #2A345E; color:var(--text); margin-top:8px; }
+  .hidden { display:none; }
+  .ok { color:var(--green); }
+  .error { color:var(--red); font-size:12px; min-height:16px; margin-top:8px; }
+  dl { display:grid; grid-template-columns:auto 1fr; gap:6px 12px; font-size:13px; } dt { color:var(--muted); }
+</style>
+</head>
+<body>
+<main class="card">
+  <span class="badge">PÁGINA DE DEMONSTRAÇÃO LOCAL</span>
+  <form id="signup" autocomplete="off" novalidate>
+    <section id="step1">
+      <h1>Criar conta (demo)</h1>
+      <p>Simula as etapas de um cadastro. Nada é enviado para a internet.</p>
+      <label for="email">E-mail</label><input id="email" name="email" type="email">
+      <label for="full_name">Nome completo</label><input id="full_name" name="full_name">
+      <label for="username">Nome de usuário</label><input id="username" name="username">
+      <label for="password">Senha</label><input id="password" name="password" type="password">
+      <button type="button" id="next" name="next">Avançar</button>
+    </section>
+    <section id="step2" class="hidden">
+      <h1>Data de nascimento</h1>
+      <p>Etapa exibida só depois de avançar, como em cadastros reais.</p>
+      <div class="row">
+        <select name="birthday_day" aria-label="Dia"></select>
+        <select name="birthday_month" aria-label="Mês"></select>
+        <select name="birthday_year" aria-label="Ano"></select>
+      </div>
+      <button type="submit" id="submit">Enviar (demo)</button>
+      <button type="button" class="secondary" id="back">Voltar</button>
+    </section>
+    <div class="error" id="error"></div>
+  </form>
+  <section id="done" class="hidden">
+    <h1 class="ok">Dados recebidos (demo)</h1>
+    <p>Envio simulado localmente. Revise o que foi preenchido:</p>
+    <dl id="summary"></dl>
+  </section>
+</main>
+<script>
+  const $ = (s) => document.querySelector(s);
+  const form = $("#signup");
+  const months = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+  const opt = (v, t) => `<option value="${v}">${t}</option>`;
+  form.birthday_day.innerHTML = opt("", "Dia") + Array.from({length:31}, (_, i) => opt(i + 1, i + 1)).join("");
+  form.birthday_month.innerHTML = opt("", "Mês") + months.map((m, i) => opt(i + 1, m)).join("");
+  const year = new Date().getFullYear();
+  form.birthday_year.innerHTML = opt("", "Ano") + Array.from({length:100}, (_, i) => opt(year - i, year - i)).join("");
+
+  $("#next").addEventListener("click", () => {
+    const missing = ["email", "full_name", "username", "password"].filter((n) => !form[n].value.trim());
+    if (missing.length) { $("#error").textContent = "Preencha todos os campos."; return; }
+    $("#error").textContent = "";
+    $("#step1").classList.add("hidden");
+    $("#step2").classList.remove("hidden");
+  });
+  $("#back").addEventListener("click", () => {
+    $("#step2").classList.add("hidden");
+    $("#step1").classList.remove("hidden");
+  });
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.birthday_day.value || !form.birthday_month.value || !form.birthday_year.value) {
+      $("#error").textContent = "Selecione a data de nascimento."; return;
+    }
+    const rows = [["E-mail", form.email.value], ["Nome", form.full_name.value], ["Usuário", "@" + form.username.value],
+                  ["Senha", "•".repeat(form.password.value.length)],
+                  ["Nascimento", `${form.birthday_day.value}/${form.birthday_month.value}/${form.birthday_year.value}`]];
+    $("#summary").replaceChildren(...rows.flatMap(([k, v]) => {
+      const dt = document.createElement("dt"); dt.textContent = k;
+      const dd = document.createElement("dd"); dd.textContent = v; return [dt, dd];
+    }));
+    form.classList.add("hidden");
+    $("#done").classList.remove("hidden");
+    document.body.dataset.status = "enviado";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+# Dados e credenciais locais
+data/
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.log
+*.pem
+*.key
+
+# Ambientes, caches e pacotes gerados
+.venv/
+venv/
+build/
+dist/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Navegadores e drivers baixados localmente
+Microsoft/
+msedgedriver/
+se-metadata.json
+*.exe
+*.dll
+*.next
+
+# Configuração local do editor e agente
+.idea/
+.vscode/
+.codex/
+.agents/

@@ -1,0 +1,23 @@
+Nome: Rafaela Veloso
+Usuario: rafavelo
+Nascimento: 10/03/2004
+Estado: Alagoas
+Cidade: Maceió
+Bio: |
+  🌴 Influenciadora virtual
+  Alagoana de coração
+  22y
+Email:
+---
+Nome: Lavínia Morelli
+Usuario: lavimore
+Nascimento: 18/06/2003
+Estado: São Paulo
+Cidade: Campinas
+Bio: |
+  ✨ Lifestyle e moda
+  Compartilhando meus melhores momentos
+  Influenciadora virtual
+Email: lavimore@inboxnexo.online
+Observacoes: Ficha de exemplo. Campos aceitos: Nome, Usuario, Nascimento (DD/MM/AAAA) ou Idade,
+  Estado, Cidade, Bio (use "Bio: |" para várias linhas), Email e Observacoes.
